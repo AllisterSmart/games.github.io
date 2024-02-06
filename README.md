@@ -1,64 +1,246 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+@extends('web.layouts.app')
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+@section('content')
+
+
+			     @foreach($banners as $banner)
+        @endforeach
+<section class="hero-area" id="home" style="background-image: url('{{'web/images/banners/'. $banner->image }}'); background-position: 0 0, 0 0; background-size: auto, cover; background-repeat: repeat, no-repeat;  fixed;"> 
+		
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7">
+						<div class="hero-area-content">
+							<!-- <h1>It’s all about Promoting your Business</h1> -->
+							<img src="{{ asset('web/images/banners/'.$banner->image1) }}" alt="Play Kung Fu Panda Game"  width="100" height="100">
+							<h1>{{ $banner->name }}</h1>
+							<p><h2>{{ $banner->heading }}</h2>
+
+<ul>
+	<li>
+	<h3>{{ $banner->content }}</h3>
+	</li>
+</ul> 
+
 </p>
+		<section class="download-hero ptb-50">
+				 <div class="col-lg-12">
+				 <!--<ul><li> <img src="{{ asset('web/images/banners/'.$banner->image1) }}" alt="download gamethon apk"> </li></ul>-->
+				 <ul>
+				 <li>
+				 </li>
+				 </ul>
+				 </div>
+				 
+				</div>
+					</div>			
+							
+		
+				<div class="col-lg-5"> 
+			 <div class="" style="margin-top: -40px">
+			<div><img src="{{ asset('web/images/banners/'.$banner->image1) }}"></div><br>
+			 <div><img src="{{ asset('web/images/banners/'.$banner->image2) }}"></div>
+			 
+   
+			 
+      	</div>
+      </div>
+      </div>
+	</div>		
+		</section>
 
-## About Laravel
+<!-- Hero section -->
+	<!--<section class="hero-section">-->
+	<!--	<div class="hero-slider owl-carousel">-->
+	<!--		<div class="hs-item set-bg" data-setbg="img/slider-1.jpg">-->
+	<!--			<div class="hs-text">-->
+	<!--				<div class="container">-->
+	<!--					<h2>The Best <span>Games</span> Out There</h2>-->
+	<!--					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada <br> lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. <br>Suspendisse cursus faucibus finibus.</p>-->
+	<!--					<a href="#" class="site-btn">Read More</a>-->
+	<!--				</div>-->
+	<!--			</div>-->
+	<!--		</div>-->
+	<!--		<div class="hs-item set-bg" data-setbg="img/slider-2.jpg">-->
+	<!--			<div class="hs-text">-->
+	<!--				<div class="container">-->
+	<!--					<h2>The Best <span>Games</span> Out There</h2>-->
+	<!--					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada <br> lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. <br>Suspendisse cursus faucibus finibus.</p>-->
+	<!--					<a href="#" class="site-btn">Read More</a>-->
+	<!--				</div>-->
+	<!--			</div>-->
+	<!--		</div>-->
+	<!--	</div>-->
+	<!--</section>-->
+	<!-- Hero section end -->
+	
+		<!-- Latest news section -->
+	<div class="latest-news-section">
+		<div class="ln-title">Latest News</div>
+		<div class="news-ticker">
+			<div class="news-ticker-contant">
+				<div class="nt-item"><span class="new">new</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+				<div class="nt-item"><span class="strategy">strategy</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
+				<div class="nt-item"><span class="racing">racing</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
+			</div>
+		</div>
+	</div>
+	<!-- Latest news section end -->
+	
+	
+	<section style="background-image: url('{{ asset('web/images/gameback6.jpg') }}'); background-position: 0 0; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+    <div class="mycontainer">
+        <!-- code here -->
+        <div class="row">
+			<div class="col-md-12">
+               <h2 class="section-header section-header--large" style="margin-bottom:10px; text-align: center; color: red;"> ✵ ✵ ✵
+Live Tournaments ✵ ✵ ✵
+</h2>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+            </div>
+            @foreach($tournaments as $tourna)
+                <div class="col-md-4">
+                    <div class="match">
+                        <div class="match-header">
+                            <div class="match-status"><span class="blink-text">Live</span></div>
+                            <div class="match-tournament">
+                                {{ $tourna->game_name }}
+                            </div>
+                            <div class="match-actions">
+                                <button class="btn-icon"><i class="material-icons-outlined">{{ $tourna->category }}</i></button>
+                                <!--<button class="btn-icon"><i class="material-icons-outlined">{{ $tourna->game_name }}</i></button>-->
+                            </div>
+                        </div>
+                        <div class="match-content">
+                            <div class="column">
+                                <div class="team team--home">
+                                    <div class="team-logo">
+                                        <img src="https://assets.codepen.io/285131/whufc.svg" />
+                                    </div>
+                                    <h2 class="team-name">{{ $tourna->game_name }}</h2>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="match-details">
+                                    <div class="match-date">
+    <strong>Date: {{ date('Y-m-d', strtotime($tourna->from_schedule)) }}</strong>
+</div>
+<div class="match-time">
+    <strong>Time: {{ date('H:i:s', strtotime($tourna->from_schedule)) }}</strong>
+</div>
+<div class="match-time">
+    <strong>To: {{ date('H:i:s', strtotime($tourna->to_schedule)) }}</strong>
+</div>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+                                    <div class="match-score">
+                                        <span class="match-score-number match-score-number--leading">Players{{ $tourna->total_players }}</span>
+                                    </div>
+                                    <div class="match-referee">
+                                        Bonus: <strong>{{ $tourna->from_bonus }}</strong>
+                                    </div>
+                                    <div class="match-bet-options">
+                                        <span class="match-bet-option">Entry: {{ min(explode(',', $tourna->entry_fees)) }} RS.</span>
+                                    </div>
+                                    <a href="{{route('pricelist',['id'=> $tourna->id])}}" class="match-bet-place">Place a bet</a>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="team team--away">
+                                    <div class="team-logo">
+                                        <img src="https://assets.codepen.io/285131/chelsea.svg" />
+                                    </div>
+                                    <h2 class="team-name">{{ $tourna->category }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+<br>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<section style="background-image: url('{{ asset('web/images/gameback7.jpg') }}'); background-position: 0 0; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; padding-bottom: 25px;">
+    <!-- POPULAR SECTION -->
+    <div class="mycontainer">
+        <div class=" row text-center">
+			<div class="col-md-12">
+                <h2 class=" section-header section-header--large text-white" style="padding-top: 25px;">Top Games on Esport</h2>
+				<h5 class="para text-white"> Play over 40+ games and win cash!</h5>
+            </div>
+			</div>
+    <div class="popular_games">
+        @foreach($games as $game)
+        <div class="sports popular-card">
+            <p style="text-align: center;"><img class="img_container" src="{{ asset('web/images/games/'.$game->image) }}" alt=""></p>
+            <h4 class="game_title">{{ $game->game_name }}</h4>
+            <p style="text-align: center;"><a class="download_button" href="{{ route('tournament', ['id' => $game->id]) }}">
+                <i class="fas fa-download"></i> Predict Now
+            </a></p>
+            </div>
+        @endforeach
+    </div>
+    </div>
 
-## Learning Laravel
+    <!-- FOLLOW -->
+    <a class="Follow" href="https://codepen.io/ZaynAlaoudi/" target="_blank"></a>
+</section>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+	
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+	<!-- Tournaments section -->
+	<section class="tournaments-section spad">
+		<div class="container">
+			<div class="tournament-title">Tournaments</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="tournament-item mb-4 mb-lg-0">
+						<div class="ti-notic">Premium Tournament</div>
+						<div class="ti-content">
+							<div class="ti-thumb set-bg" data-setbg="img/tournament/1.jpg"></div>
+							<div class="ti-text">
+								<h4>World Of WarCraft</h4>
+								<ul>
+									<li><span>Tournament Beggins:</span> June 20, 2018</li>
+									<li><span>Tounament Ends:</span> July 01, 2018</li>
+									<li><span>Participants:</span> 10 teams</li>
+									<li><span>Tournament Author:</span> Admin</li>
+								</ul>
+								<p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="tournament-item">
+						<div class="ti-notic">Premium Tournament</div>
+						<div class="ti-content">
+							<div class="ti-thumb set-bg" data-setbg="img/tournament/2.jpg"></div>
+							<div class="ti-text">
+								<h4>DOOM</h4>
+								<ul>
+									<li><span>Tournament Beggins:</span> June 20, 2018</li>
+									<li><span>Tounament Ends:</span> July 01, 2018</li>
+									<li><span>Participants:</span> 10 teams</li>
+									<li><span>Tournament Author:</span> Admin</li>
+								</ul>
+								<p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Tournaments section bg -->
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+	
+	<!-- Review section end -->
+@endsection
